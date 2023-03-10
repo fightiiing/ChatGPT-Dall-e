@@ -3,7 +3,7 @@ import { useState } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from "@chatscope/chat-ui-kit-react";
 
-const api_key='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';
+const api_key='';
 
 function App() {
   const [typing, setTyping] = useState(false);
