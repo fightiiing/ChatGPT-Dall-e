@@ -77,14 +77,14 @@ const systemMessage = {
         <MainContainer>
           <ChatContainer>
             <MessageList
-            autoScrollToBottomOnMount={true}
-                typingIndicator={typing ? <TypingIndicator content="ChatGPT is typing"/> : null}
-               >
+              scrollBehavior='smooth'
+              typingIndicator={typing ? <TypingIndicator content="ChatGPT is typing"/> : null}
+            >
               {messages.map((message,i)=>{
                 return <Message key={i} model={message} />
               })}
               </MessageList>
-            <MessageInput placeholder='Type message here' onSend={handleSend} ></MessageInput>
+            <MessageInput placeholder='Type message here' onSend={handleSend} attachButton={false}></MessageInput>
           </ChatContainer>
         </MainContainer>
         </div>
