@@ -1,1 +1,1 @@
-ChatGPT api in a React made app.
+Functional ChatGPT api in a React made app.
