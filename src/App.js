@@ -3,12 +3,14 @@ import { useState} from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from "@chatscope/chat-ui-kit-react";
 import { Configuration, OpenAIApi } from 'openai';
-import api_key from './apikey';
+
 
 function App() {
   //states for Dall E
   const [prompt, setPrompt] = useState("")
   const [result, setResult] = useState("")
+
+const api_key=process.env.REACT_APP_API_KEY
 
 const configuration = new Configuration({
   apiKey: api_key
