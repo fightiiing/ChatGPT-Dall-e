@@ -1,15 +1,37 @@
 import './App.css';
-import { useState } from 'react';
+import { useState} from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from "@chatscope/chat-ui-kit-react";
+import { Configuration, OpenAIApi } from 'openai';
 
-const api_key='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';
+const api_key='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';
+const dall_key ='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';
 
 function App() {
+  //states for Dall E
+  const [prompt, setPrompt] = useState("")
+  const [result, setResult] = useState("")
+
+const configuration = new Configuration({
+  apiKey: dall_key
+})
+
+const openai = new OpenAIApi(configuration);
+
+const generateImage = async () => {
+  const res = await openai.createImage({
+    prompt: prompt,
+    n:1,
+    size: "512x512"
+  })
+setResult(res.data.data[0].url)
+}
+
+  // ***ChatGPT below***
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
-      message: "Hi, I'm ChatGPT.",
+      message: "I'm ChatGPT, ask me anything.<br />Funny image ideas maybe?",
       sender: "ChatGPT"
     }
   ]);
@@ -21,7 +43,6 @@ function App() {
           direction: "outgoing"
     }
   
-
   const newMessages = [...messages, newMessage];
 
   //update message state
@@ -44,7 +65,7 @@ async function processMessageToChatGPT(chatMessages) {
 
 const systemMessage = {
   role: "system",
-  content: "Explain all concepts like I am 10 years old."
+  content: "Explain all concepts as if explaining to a ten-year old."
 }
 
   const apiRequestBody = {
@@ -71,9 +92,10 @@ const systemMessage = {
    setTyping(false);
   })
 }
-  return (
-    <div className="App">
-      <div className='chat'>
+
+ return (
+  <div className='ai-container'>
+      <div className="chat">
         <MainContainer>
           <ChatContainer>
             <MessageList
@@ -84,11 +106,27 @@ const systemMessage = {
                 return <Message key={i} model={message} />
               })}
               </MessageList>
-            <MessageInput placeholder='Type message here' onSend={handleSend} attachButton={false}></MessageInput>
+            <MessageInput autofocus placeholder='Type message here' onSend={handleSend} attachButton={false}></MessageInput>
           </ChatContainer>
         </MainContainer>
         </div>
-    </div>
+          <div className="dall"> 
+            <h2>Dall*E Image Generator</h2>
+              <textarea placeholder='Enter image terms'
+              onChange={(e) => setPrompt(e.target.value)}
+              /><br />
+              <button onClick={generateImage}>Generate an Image</button>
+                <div>
+                  <hr />
+                  {result.length > 0 ? (
+                    <img src={result} alt={result} />
+                  ) : (
+                    <p>Typically takes about 5 seconds to return an image <br />
+                      A 512 x 512 pixel image will appear here</p>
+                  )}
+                </div>
+          </div>
+        </div>
   );
 }
 export default App;
