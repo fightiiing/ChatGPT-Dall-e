@@ -5,8 +5,12 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 import { Configuration, OpenAIApi } from 'openai';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const api_key='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';
 const dall_key ='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';
+=======
+const api_key='';
+>>>>>>> 604d33e3f5cdff82b14eab6bcda03315f4649a9e
 =======
 const api_key='';
 >>>>>>> 604d33e3f5cdff82b14eab6bcda03315f4649a9e
