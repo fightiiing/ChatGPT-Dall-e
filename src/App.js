@@ -3,21 +3,7 @@ import { useState} from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from "@chatscope/chat-ui-kit-react";
 import { Configuration, OpenAIApi } from 'openai';
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-const api_key='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';
-const dall_key ='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';
-=======
-const api_key='';
->>>>>>> 604d33e3f5cdff82b14eab6bcda03315f4649a9e
-=======
-const api_key='';
->>>>>>> 604d33e3f5cdff82b14eab6bcda03315f4649a9e
-=======
-const api_key='';
->>>>>>> 604d33e3f5cdff82b14eab6bcda03315f4649a9e
+import api_key from './apikey';
 
 function App() {
   //states for Dall E
@@ -25,7 +11,7 @@ function App() {
   const [result, setResult] = useState("")
 
 const configuration = new Configuration({
-  apiKey: dall_key
+  apiKey: api_key
 })
 
 const openai = new OpenAIApi(configuration);
@@ -118,7 +104,7 @@ const systemMessage = {
                 return <Message key={i} model={message} />
               })}
               </MessageList>
-            <MessageInput autofocus placeholder='Type message here' onSend={handleSend} attachButton={false}></MessageInput>
+            <MessageInput placeholder='Type message here' onSend={handleSend} attachButton={false}></MessageInput>
           </ChatContainer>
         </MainContainer>
         </div>
