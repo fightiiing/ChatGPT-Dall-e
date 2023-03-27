@@ -10,7 +10,7 @@ function App() {
   const [prompt, setPrompt] = useState("")
   const [result, setResult] = useState("")
 
-const api_key=process.env.REACT_APP_APIKEY
+const api_key=process.env.REACT_APP_APIKEY;
 
 const configuration = new Configuration({
   apiKey: api_key
@@ -31,7 +31,7 @@ setResult(res.data.data[0].url)
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
-      message: "I'm ChatGPT, ask me anything.<br />Funny image ideas maybe?",
+      message: "I'm ChatGPT, ask me anything.",
       sender: "ChatGPT"
     }
   ]);
@@ -106,7 +106,7 @@ const systemMessage = {
                 return <Message key={i} model={message} />
               })}
               </MessageList>
-            <MessageInput placeholder='Type message here' onSend={handleSend} attachButton={false}></MessageInput>
+            <MessageInput id="messageInput" placeholder='Type message here' onSend={handleSend} autoFocus={true} sendButton={false} attachButton={false}></MessageInput>
           </ChatContainer>
         </MainContainer>
         </div>
