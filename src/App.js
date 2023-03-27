@@ -10,7 +10,7 @@ function App() {
   const [prompt, setPrompt] = useState("")
   const [result, setResult] = useState("")
 
-const api_key=process.env.REACT_APP_API_KEY
+const api_key=process.env.REACT_APP_APIKEY
 
 const configuration = new Configuration({
   apiKey: api_key
