@@ -3,6 +3,10 @@
  html {
   background-color: rgb(215, 231, 231);
 } 
+/* 
+::selection {
+  background: rgb(251, 255, 0);
+} */
 
 .ai-container {
   display: grid;
