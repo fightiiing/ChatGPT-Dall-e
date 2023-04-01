@@ -111,7 +111,7 @@ const systemMessage = {
         </MainContainer>
         </div>
           <div className="dall"> 
-            <h2>Dall*E Image Generator</h2>
+            <h2>Dall-E Image Generator</h2>
               <textarea placeholder='Enter image terms'
               onChange={(e) => setPrompt(e.target.value)}
               /><br />
