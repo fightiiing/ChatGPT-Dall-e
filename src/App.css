@@ -100,7 +100,7 @@ button:not([disabled]):active {
   }
   .dall {
     margin-top: .25rem;
-    min-width: 522px;
+    min-width: auto;
 }
   .dall > img {
     max-width: 100%;
