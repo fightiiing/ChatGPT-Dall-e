@@ -100,12 +100,12 @@ button:not([disabled]):active {
   }
   .dall {
     margin-top: .25rem;
+    min-width: 522px;
 }
-img {
-  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  margin: 0 10px;
-}
+  .dall > img {
+    max-width: 100%;
+  }
+
 html, body {
   margin: 1rem;
 }
