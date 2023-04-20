@@ -102,7 +102,7 @@ button:not([disabled]):active {
     margin-top: .25rem;
 }
 
-html, body {
+/* html, body {
   margin: 1rem;
-}
+} */
 }
