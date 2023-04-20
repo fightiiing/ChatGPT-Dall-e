@@ -91,7 +91,7 @@ button:not([disabled]):active {
   transform: translate(2px, 2px);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .ai-container {
     display: grid;
     grid-template-areas: 
@@ -107,6 +107,7 @@ button:not([disabled]):active {
     max-height: 95%;
     display: block;
     margin: auto;
+    padding-bottom: 10px;
   }
 
   html, body {
