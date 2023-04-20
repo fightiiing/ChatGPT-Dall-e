@@ -1,28 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
- html {
-  background-color: rgb(215, 231, 231);
+ * {
+  margin: 0;
 } 
-/* 
-::selection {
-  background: rgb(251, 255, 0);
-} */
+
+html, body {
+  box-sizing: border-box;
+  background-color: rgb(215, 231, 231);
+  margin: .25rem;
+}
 
 .ai-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
   grid-template-rows: 1fr;
   grid-column-gap: 5px;
   grid-template-areas: 
     "chat dall";
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  width: 100%;
-}
+} 
 
 .chat {
 grid-area: chat;
-min-width: 512px;
 border:2px black solid;
 }
 
@@ -65,7 +66,7 @@ button {
   font-weight: 400;
   line-height: 20px;
   margin: 0 5px 10px 0;
-  overflow: visible;
+  /* overflow: visible; */
   padding: 12px 40px;
   text-align: center;
   text-transform: none;
@@ -96,9 +97,12 @@ button:not([disabled]):active {
 
 @media screen and (max-width: 540px) {
   .ai-container {
+    display: grid;
     grid-template-areas: 
       "chat" 
       "dall";
-    min-width: 530px;
   }
+  .dall {
+    margin-top: .25rem;
+}
 }

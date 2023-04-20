@@ -121,8 +121,7 @@ const systemMessage = {
                   {result.length > 0 ? (
                     <img src={result} alt={result} />
                   ) : (
-                    <p>Typically takes about 5 seconds to return an image <br />
-                      A 512 x 512 pixel image will appear here</p>
+                    <p>Typically takes about 5 seconds to return an image</p>
                   )}
                 </div>
           </div>
