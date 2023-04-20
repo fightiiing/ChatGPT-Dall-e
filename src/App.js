@@ -123,6 +123,7 @@ const systemMessage = {
                   ) : (
                     <p>Typically takes about 5 seconds to return an image</p>
                   )}
+                             
                 </div>
           </div>
         </div>

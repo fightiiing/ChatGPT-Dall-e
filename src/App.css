@@ -100,11 +100,8 @@ button:not([disabled]):active {
   }
   .dall {
     margin-top: .25rem;
-    width: auto;
+    object-fit: contain;
 }
-  .dall > img {
-    max-width: 100%;
-  }
 
 html, body {
   margin: 1rem;
