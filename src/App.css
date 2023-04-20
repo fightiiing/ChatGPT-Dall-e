@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
- * {
-  margin: 0;
-} 
-
 html, body {
   box-sizing: border-box;
   background-color: rgb(215, 231, 231);
@@ -66,7 +62,7 @@ button {
   font-weight: 400;
   line-height: 20px;
   margin: 0 5px 10px 0;
-  /* overflow: visible; */
+  overflow: visible;
   padding: 12px 40px;
   text-align: center;
   text-transform: none;
@@ -104,5 +100,10 @@ button:not([disabled]):active {
   }
   .dall {
     margin-top: .25rem;
+}
+img {
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 0 10px;
 }
 }
